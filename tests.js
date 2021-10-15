@@ -65,5 +65,17 @@ describe('isFive', function () {
         expect(isFive(4)).toBe(false);
         expect(isFive(-10)).toBe(false);
         expect(isFive(-5)).toBe(false);
+        expect(isFive("5")).toBe(true);
+    });
+    it('should return false when passed any value besides the number 5', function () {
+        expect(isFive("apple")).toBe(false);
+        expect(isFive(false)).toBe(false);
+        expect(isFive([5,10,15])).toBe(false);
+    });
+});
+
+describe('isEven', function () {
+    it('should be a defined function', function () {
+        expect(typeof isEven).toBe('function');
     });
 });
