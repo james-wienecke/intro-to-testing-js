@@ -4,7 +4,6 @@ const helloWorld = function() {
 }
 
 // sayHello function
-// TODO: return string of hello + any input passed
 function sayHello(input) {
     return "Hello, " + input + "!";
 }
