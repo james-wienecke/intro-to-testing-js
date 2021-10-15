@@ -5,5 +5,8 @@ const helloWorld = function() {
 
 // sayHello function
 function sayHello(input) {
+    if (input === undefined || input === true || input === false) {
+        return "Hello, World!";
+    }
     return "Hello, " + input + "!";
 }
