@@ -78,4 +78,12 @@ describe('isEven', function () {
     it('should be a defined function', function () {
         expect(typeof isEven).toBe('function');
     });
+    it('should return a type of boolean', function () {
+        expect(typeof isEven()).toBe('boolean');
+    });
+    it('should return true for even numbers and false for odd numbers', function () {
+        expect(isEven(2)).toBe(true);
+        expect(isEven(-4)).toBe(true);
+        expect(isEven(3)).toBe(false);
+    });
 });

@@ -20,6 +20,10 @@ function isFive(input) {
     }
 }
 
-function isEven() {
-
+function isEven(input) {
+    if (input % 2 === 0) {
+        return true;
+    } else {
+        return false;
+    }
 }
