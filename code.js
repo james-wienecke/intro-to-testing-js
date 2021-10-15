@@ -25,7 +25,7 @@ function isEven(input) {
 }
 
 function isVowel(input) {
-    if (typeof input === 'string' && input.length === 1) {
+    if (typeof input === 'string') {
         switch (input.toLowerCase()) {
             case 'a':
             case 'e':
