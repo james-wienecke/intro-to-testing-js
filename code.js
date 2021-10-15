@@ -5,7 +5,8 @@ const helloWorld = function() {
 
 // sayHello function
 function sayHello(input) {
-    if (input === undefined || input === true || input === false) {
+    if (input === undefined || input === null || typeof input === 'boolean' || input === "" || !isNaN(input)
+    || typeof input === 'object') {
         return "Hello, World!";
     }
     return "Hello, " + input + "!";
