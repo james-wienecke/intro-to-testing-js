@@ -104,4 +104,32 @@ describe('isVowel', function (){
     it('should return a type of boolean', function () {
         expect(typeof isVowel()).toBe('boolean');
     });
+    it('should return true for single character lowercase vowels in strings', function () {
+        expect(isVowel("a")).toBe(true);
+        expect(isVowel("e")).toBe(true);
+        expect(isVowel("b")).toBe(false);
+        expect(isVowel("i")).toBe(true);
+        expect(isVowel("o")).toBe(true);
+        expect(isVowel("u")).toBe(true);
+    });
+    it('should return true for single character uppercase vowels in strings', function () {
+        expect(isVowel("A")).toBe(true);
+        expect(isVowel("E")).toBe(true);
+        expect(isVowel("I")).toBe(true);
+        expect(isVowel("O")).toBe(true);
+        expect(isVowel("U")).toBe(true);
+        expect(isVowel("G")).toBe(false);
+    });
+    it('should return false for strings longer than 1 character', function () {
+        expect(isVowel("Apple")).toBe(false);
+        expect(isVowel("Potato")).toBe(false);
+        expect(isVowel("people")).toBe(false);
+        expect(isVowel("the kingdom of albion")).toBe(false);
+    });
+    it('should return false for all input data types that are not strings', function () {
+        expect(isVowel(['o'])).toBe(false);
+        expect(isVowel(null)).toBe(false);
+        expect(isVowel(false)).toBe(false);
+        expect(isVowel(45)).toBe(false);
+    });
 });

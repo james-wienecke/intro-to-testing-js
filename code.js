@@ -31,5 +31,20 @@ function isEven(input) {
 }
 
 function isVowel(input) {
+    if (typeof input === 'string') {
+        input = input.toLowerCase()
+    } else {
+        return false;
+    }
 
+    switch (input) {
+        case 'a':
+        case 'e':
+        case 'i':
+        case 'o':
+        case 'u':
+            return true;
+        default:
+            return false;
+     }
 }
