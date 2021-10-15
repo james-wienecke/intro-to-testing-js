@@ -21,9 +21,11 @@ function isFive(input) {
 }
 
 function isEven(input) {
-    if (input % 2 === 0) {
+    // check input for even number. also requires input to be either of type number OR
+    // a string that can be resolved to a number.
+    if (input % 2 === 0 && (typeof input === 'number'
+        || (typeof input === 'string' && !isNaN(input)))) {
         return true;
-    } else {
-        return false;
     }
+    return false;
 }

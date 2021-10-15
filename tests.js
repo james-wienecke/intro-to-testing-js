@@ -85,5 +85,15 @@ describe('isEven', function () {
         expect(isEven(2)).toBe(true);
         expect(isEven(-4)).toBe(true);
         expect(isEven(3)).toBe(false);
+        expect(isEven("8")).toBe(true);
+    });
+    it('should return false for values that are not integer numbers', function () {
+        expect(isEven("banana")).toBe(false);
+        expect(isEven(true)).toBe(false);
+        expect(isEven(false)).toBe(false);
+        expect(isEven(Infinity)).toBe(false);
+    });
+    it('should return false when executed without an argument', function () {
+        expect(isEven()).toBe(false);
     });
 });
