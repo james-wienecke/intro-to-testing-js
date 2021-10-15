@@ -14,6 +14,7 @@ describe('helloWorld', function() {
     });
 });
 
+// Unit tests for the sayHello function
 describe('sayHello', function() {
     it('should be a defined function', function() {
        expect(typeof sayHello).toBe('function');
@@ -50,9 +51,10 @@ describe('sayHello', function() {
     });
     it('should return "Hello, [string result of function]!', function () {
         expect(sayHello(helloWorld())).toBe("Hello, helloWorld, World!!")
-    })
+    });
 });
 
+// Unit tests for the isFive function
 describe('isFive', function () {
     it('should be a defined function', function() {
         expect(typeof isFive).toBe('function');
@@ -74,6 +76,7 @@ describe('isFive', function () {
     });
 });
 
+// Unit tests for the isEven function
 describe('isEven', function () {
     it('should be a defined function', function () {
         expect(typeof isEven).toBe('function');
@@ -97,6 +100,8 @@ describe('isEven', function () {
         expect(isEven()).toBe(false);
     });
 });
+
+// Unit tests for the isVowel function
 describe('isVowel', function (){
     it('should be a defined function', function () {
         expect(typeof isVowel).toBe('function');
@@ -131,5 +136,38 @@ describe('isVowel', function (){
         expect(isVowel(null)).toBe(false);
         expect(isVowel(false)).toBe(false);
         expect(isVowel(45)).toBe(false);
+    });
+});
+
+// Unit tests for the add function
+describe('add', function () {
+    it('should be a defined function', function () {
+        expect(typeof add).toBe('function');
+    });
+    it('should return a type of number', function () {
+        expect(typeof add()).toBe('number');
+    });
+    it('should return the sum of two numbers passed into it', function () {
+        expect(add(0, 1)).toBe(1);
+        expect(add(2, 1)).toBe(3);
+        expect(add(-7, 3)).toBe(-4);
+    });
+    it('should coerce numbers from strings into numbers, no concat', function () {
+        expect(add("5", 6)).toBe(11);
+        expect(add("-4", 10)).toBe(6);
+        expect(add("10", "5")).toBe(15);
+    });
+    it('should return NaN for all function executions with at least one value being a non-numeric value', function () {
+        expect(add("5", "dog")).toBeNaN();
+        expect(add("apple", 10)).toBeNaN();
+        expect(add("ice", "cream")).toBeNaN();
+        expect(add("5", true)).toBeNaN();
+        expect(add(false, 10)).toBeNaN();
+        expect(add(false, "door")).toBeNaN();
+        expect(add(true, true)).toBeNaN();
+    });
+    it('should return NaN when provided less than 2 arguements', function () {
+        expect(add()).toBeNaN();
+        expect(add(5)).toBeNaN();
     });
 });
