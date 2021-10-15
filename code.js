@@ -29,3 +29,7 @@ function isEven(input) {
     }
     return false;
 }
+
+function isVowel(input) {
+
+}
